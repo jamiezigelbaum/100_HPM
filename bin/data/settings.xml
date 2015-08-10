@@ -18,44 +18,44 @@
 <Widget>
     <Kind>4</Kind>
     <Name>contrast</Name>
-    <Value>1.399014950</Value>
+    <Value>1.359605789</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
     <Name>brightness</Name>
-    <Value>0.142857194</Value>
+    <Value>-0.034482777</Value>
 </Widget>
 <Widget>
     <Kind>11</Kind>
     <Name>center</Name>
-    <XValue>524.610839844</XValue>
-    <YValue>385.891601562</YValue>
+    <XValue>595.862060547</XValue>
+    <YValue>437.438415527</YValue>
 </Widget>
 <Widget>
     <Kind>11</Kind>
     <Name>Text Pos</Name>
     <XValue>1024.000000000</XValue>
-    <YValue>518.305419922</YValue>
+    <YValue>529.655151367</YValue>
 </Widget>
 <Widget>
     <Kind>42</Kind>
     <Name>SS Width</Name>
-    <Value>797</Value>
+    <Value>605</Value>
 </Widget>
 <Widget>
     <Kind>42</Kind>
     <Name>SS Height</Name>
-    <Value>1021</Value>
+    <Value>1051</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
     <Name>Second Screen X</Name>
-    <Value>491.822662354</Value>
+    <Value>406.699493408</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
     <Name>scale</Name>
-    <Value>0.921182275</Value>
+    <Value>0.876847267</Value>
 </Widget>
 <Widget>
     <Kind>42</Kind>

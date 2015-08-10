@@ -27,8 +27,8 @@ public:
     ofxISF::Shader isf3;
     ofxISF::Shader isf4;
     ofxISF::Shader colorCorrect;
-    vector<ofVideoPlayer*> 	players;
-    vector<ofFbo*> 	normalized;
+    vector<ofPtr<ofVideoPlayer> > players;
+    vector<ofPtr<ofFbo> > 	normalized;
     vector<string> filePaths;
     ofVideoGrabber video;
     ofImage img;
