@@ -10,7 +10,7 @@ void ofApp::setup()
 {
     
     
-    
+    ofSetLogLevel(OF_LOG_SILENT);
     ofxNodejs::init();
     $("var DEBUGGING     = true;"
       "var debug         = require('../../../data/node/libs/debug');"
@@ -18,7 +18,7 @@ void ofApp::setup()
       "var twitter       = require('../../../data/node/libs/api/twitter');"
       "var upload       = require('../../../data/node/libs/api/upload');"
       
-      "twitter.start(false);"
+      "twitter.start(true);"
       "upload.start();"
       );
     
@@ -146,7 +146,7 @@ void ofApp::setup()
     
     //    if(dir.size() >= maxVids){
     for(int i = 0; i < maxVids*2; i++){
-        players.push_back(ofPtr<ofVideoPlayer>(new ofVideoPlayer()));
+        players.push_back(new ofVideoPlayer());
         if(i<dir.size()){
             players[i]->loadMovie(dir.getPath(i));
             players[i]->setLoopState(OF_LOOP_NORMAL);
@@ -158,7 +158,7 @@ void ofApp::setup()
             players[i]->setUseTexture(true);
         
         //
-        normalized[i] = ofPtr<ofFbo>(new ofFbo());
+        normalized[i] = new ofFbo();
         normalized[i]->allocate(texWidth, texHeight, GL_RGBA);
         normalized[i]->begin();
         ofClear(0, 0, 0, 0);
@@ -533,7 +533,7 @@ void ofApp::generateShaders(int numVids){
     normalized.resize(numVids*2);
     
     for(int i = 0; i < numVids*2; i++){
-        normalized[i] = ofPtr<ofFbo>(new ofFbo());
+        normalized[i] = new ofFbo();
         normalized[i]->allocate(texWidth, texHeight, GL_RGBA);
         normalized[i]->begin();
         ofClear(0, 0, 0, 0);

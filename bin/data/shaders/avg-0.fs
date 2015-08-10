@@ -13,14 +13,6 @@
 {"NAME": "image4",
 "TYPE": "image"},
 {"NAME": "image5",
-"TYPE": "image"},
-{"NAME": "image6",
-"TYPE": "image"},
-{"NAME": "image7",
-"TYPE": "image"},
-{"NAME": "image8",
-"TYPE": "image"},
-{"NAME": "image9",
 "TYPE": "image"}]}*/
 
 void main(void) {
@@ -38,14 +30,6 @@ vec4	srcPixel4 = IMG_NORM_PIXEL(image4,uv);
 final+=srcPixel4;
 vec4	srcPixel5 = IMG_NORM_PIXEL(image5,uv);
 final+=srcPixel5;
-vec4	srcPixel6 = IMG_NORM_PIXEL(image6,uv);
-final+=srcPixel6;
-vec4	srcPixel7 = IMG_NORM_PIXEL(image7,uv);
-final+=srcPixel7;
-vec4	srcPixel8 = IMG_NORM_PIXEL(image8,uv);
-final+=srcPixel8;
-vec4	srcPixel9 = IMG_NORM_PIXEL(image9,uv);
-final+=srcPixel9;
-gl_FragColor = vec4(vec3(final)/10.0, 1.0);
+gl_FragColor = vec4(vec3(final)/6.0, 1.0);
 
 }

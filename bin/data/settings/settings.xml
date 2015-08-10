@@ -28,8 +28,8 @@
 <Widget>
     <Kind>11</Kind>
     <Name>center</Name>
-    <XValue>595.862060547</XValue>
-    <YValue>437.438415527</YValue>
+    <XValue>514.522155762</XValue>
+    <YValue>370.758605957</YValue>
 </Widget>
 <Widget>
     <Kind>11</Kind>
@@ -55,12 +55,12 @@
 <Widget>
     <Kind>4</Kind>
     <Name>scale</Name>
-    <Value>0.766009867</Value>
+    <Value>1.571428537</Value>
 </Widget>
 <Widget>
     <Kind>42</Kind>
     <Name>numVideos</Name>
-    <Value>10</Value>
+    <Value>6</Value>
 </Widget>
 <Widget>
     <Kind>42</Kind>
@@ -70,5 +70,5 @@
 <Widget>
     <Kind>2</Kind>
     <Name>Debug On Start</Name>
-    <Value>0</Value>
+    <Value>1</Value>
 </Widget>
