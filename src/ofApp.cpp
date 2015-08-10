@@ -154,8 +154,9 @@ void ofApp::setup()
             players[i]->setVolume(0);
             players[i]->setSpeed(1.0);
             currentSearch.files.push_back(dir.getPath(i));
-        }
             players[i]->setUseTexture(true);
+        }
+        
         
         //
         normalized[i] = new ofFbo();
