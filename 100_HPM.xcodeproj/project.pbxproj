@@ -1655,7 +1655,7 @@
 					../../../addons/ofxFLRecorder/libs/bngnsrecorder/lib/osx,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)Debug";
-				USER_HEADER_SEARCH_PATHS = "../../../addons/ofxJSON/libs/jsoncpp/include/ ../../../addons/ofxUnicode/libs/utf8cpp/include/ ../../../addons/ofxNodejs/libs/node/include/ ../../../addons/ofxFLRecorder/libs/bngnsrecorder/include/";
+				USER_HEADER_SEARCH_PATHS = "../../../addons/ofxJSON/libs/jsoncpp/include/ ../../../addons/ofxUnicode/libs/utf8cpp/include/ ../../../addons/ofxNodejs/libs/node/include/ ../../../addons/ofxFLRecorder/libs/bngnsrecorder/include/ ../../../addons/ofxOsc/libs/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1743,7 +1743,7 @@
 					../../../addons/ofxFLRecorder/libs/bngnsrecorder/lib/osx,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "../../../addons/ofxJSON/libs/jsoncpp/include/ ../../../addons/ofxUnicode/libs/utf8cpp/include/ ../../../addons/ofxNodejs/libs/node/include/ ../../../addons/ofxFLRecorder/libs/bngnsrecorder/include/";
+				USER_HEADER_SEARCH_PATHS = "../../../addons/ofxJSON/libs/jsoncpp/include/ ../../../addons/ofxUnicode/libs/utf8cpp/include/ ../../../addons/ofxNodejs/libs/node/include/ ../../../addons/ofxFLRecorder/libs/bngnsrecorder/include/ ../../../addons/ofxOsc/libs/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
