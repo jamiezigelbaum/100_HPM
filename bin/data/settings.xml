@@ -18,24 +18,24 @@
 <Widget>
     <Kind>4</Kind>
     <Name>contrast</Name>
-    <Value>1.399014950</Value>
+    <Value>1.832512379</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
     <Name>brightness</Name>
-    <Value>0.142857194</Value>
+    <Value>0.004926085</Value>
 </Widget>
 <Widget>
     <Kind>11</Kind>
     <Name>center</Name>
-    <XValue>514.522155762</XValue>
-    <YValue>370.758605957</YValue>
+    <XValue>633.694580078</XValue>
+    <YValue>449.261077881</YValue>
 </Widget>
 <Widget>
     <Kind>11</Kind>
     <Name>Text Pos</Name>
-    <XValue>1024.000000000</XValue>
-    <YValue>529.655151367</YValue>
+    <XValue>1153.891601562</XValue>
+    <YValue>514.285705566</YValue>
 </Widget>
 <Widget>
     <Kind>42</Kind>
@@ -55,12 +55,12 @@
 <Widget>
     <Kind>4</Kind>
     <Name>scale</Name>
-    <Value>0.928571463</Value>
+    <Value>0.972906411</Value>
 </Widget>
 <Widget>
     <Kind>42</Kind>
     <Name>numVideos</Name>
-    <Value>7</Value>
+    <Value>6</Value>
 </Widget>
 <Widget>
     <Kind>42</Kind>
@@ -70,5 +70,5 @@
 <Widget>
     <Kind>2</Kind>
     <Name>Debug On Start</Name>
-    <Value>1</Value>
+    <Value>0</Value>
 </Widget>

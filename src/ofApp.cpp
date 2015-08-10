@@ -293,7 +293,6 @@ void ofApp::update()
                 for(int i = 0; i < players.size(); i++){
                     if(players[i]->isPlaying()){
                         players[i]->stop();
-                        players[i]->closeMovie();
                     }
                 }
                 int foomax = currentSearch.files.size()>players.size()?maxVids:currentSearch.files.size()/2;
@@ -333,7 +332,6 @@ void ofApp::update()
                     for(int i = 0; i < players.size(); i++){
                         if(players[i]->isPlaying()){
                             players[i]->stop();
-                            players[i]->closeMovie();
                         }
                     }
                     
