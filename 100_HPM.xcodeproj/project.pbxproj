@@ -1651,8 +1651,8 @@
 					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_50)",
 					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_51)",
 					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_52)",
-					"/Users/dantheman/src/of_v0.8.4_osx_release-kinect-piano-yyn/addons/ofxNodejs/libs/node/lib/osx",
-					"/Users/dantheman/src/of_v0.8.4_osx_release-kinect-piano-yyn/addons/ofxFLRecorder/libs/bngnsrecorder/lib/osx",
+					../../../addons/ofxNodejs/libs/node/lib/osx,
+					../../../addons/ofxFLRecorder/libs/bngnsrecorder/lib/osx,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)Debug";
 				USER_HEADER_SEARCH_PATHS = "../../../addons/ofxJSON/libs/jsoncpp/include/ ../../../addons/ofxUnicode/libs/utf8cpp/include/ ../../../addons/ofxNodejs/libs/node/include/ ../../../addons/ofxFLRecorder/libs/bngnsrecorder/include/";
@@ -1739,8 +1739,8 @@
 					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_49)",
 					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_50)",
 					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_51)",
-					"/Users/dantheman/src/of_v0.8.4_osx_release-kinect-piano-yyn/addons/ofxNodejs/libs/node/lib/osx",
-					"/Users/dantheman/src/of_v0.8.4_osx_release-kinect-piano-yyn/addons/ofxFLRecorder/libs/bngnsrecorder/lib/osx",
+					../../../addons/ofxNodejs/libs/node/lib/osx,
+					../../../addons/ofxFLRecorder/libs/bngnsrecorder/lib/osx,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = "../../../addons/ofxJSON/libs/jsoncpp/include/ ../../../addons/ofxUnicode/libs/utf8cpp/include/ ../../../addons/ofxNodejs/libs/node/include/ ../../../addons/ofxFLRecorder/libs/bngnsrecorder/include/";
