@@ -19,7 +19,7 @@ void ofApp::setup()
       "var upload       = require('../../../data/node/libs/api/upload');"
       
       "twitter.start(true);"
-      "upload.start();"
+      "upload.start(false);"
       );
     
     
@@ -409,57 +409,112 @@ void ofApp::draw()
     ofRectangle column;
     
     
+    
+    // Secondary Screen text
+    
+    // TITLE
     string foo = "100 Hours per Minute";
+    column = bold.drawMultiLineColumn(foo, 80,
+                                      x, 50,
+                                      ssWidth-ssWidth*0.10,
+                                      numLines, false, 6, true, &wordsWereCropped);
     
-    column = bold.drawMultiLineColumn(foo, 55, x, 50, ssWidth-ssWidth*0.10, numLines, false, 5, true, &wordsWereCropped);
+
+    // DESCRIPTION
+    foo = "This installation is interactive, you can use Twitter to search for anything you like on YouTube. When your search comes up in the queue below, 100 Hours per Minute will play the first 14 results all-at-once. Then it will upload your averaged video back to YouTube (where every averaged video is archived) and reply to your tweet with the link.";
+    column = regular.drawMultiLineColumn(foo, 40,
+                                         x, column.y+column.height+60,
+                                         ssWidth-ssWidth*0.10,
+                                         numLines, false, 5, true, &wordsWereCropped);
     
-    foo = "#100_HPM displays averages of multiple YouTube videos overlaid and played together in response to searches submitted in the gallery via Twitter.";
-    column = regular.drawMultiLineColumn(foo, 55,	x, column.y+column.height+65, ssWidth-ssWidth*0.10, numLines, false, 5, true, &wordsWereCropped);
-    
+    // HORIZONTAL LINE
     ofLine(column.x, column.y+column.height+85/4, column.x+(ssWidth-column.x*2.0), column.y+column.height+85/4);
     
+    // INSTRUCTIONS
     numLines = 0;
     wordsWereCropped = false;
-    foo = "How to search:";
-    column = bold.drawMultiLineColumn(foo, 50, x, column.y+column.height+85, ssWidth-ssWidth*0.10, numLines, false, 5, true, &wordsWereCropped);
-    
-    numLines = 0;
-    wordsWereCropped = false;
-    foo = "Tweet to @100_HPM with your search query and this one-time hashtag "+nextHashTag;
-    column = regular.drawMultiLineColumn(foo, 50, x, column.y+column.height+60, ssWidth-ssWidth*0.10, numLines, false, 5, true, &wordsWereCropped);
-    
-    numLines = 0;
-    wordsWereCropped = false;
-    foo = "Playing: ";
-    column = bold.drawMultiLineColumn(foo, 50, x, column.y+column.height+90, ssWidth-ssWidth*0.10, numLines, false, 5, true, &wordsWereCropped);
-    
+    foo = "INSTRUCTIONS";
+    column = bold.drawMultiLineColumn(foo, 40,
+                                      x, column.y+column.height+60,
+                                      ssWidth-ssWidth*0.10,
+                                      numLines, false, 5, true, &wordsWereCropped);
     
     numLines = 0;
     wordsWereCropped = false;
-    foo = currentSearch.query+" by @"+currentSearch.user+" at "+currentSearch.time;
-    column = regular.drawMultiLineColumn(foo, 50, x, column.y+column.height+50, ssWidth-ssWidth*0.10, numLines, false, 5, true, &wordsWereCropped);
+    foo = "Use Twitter on your phone and send a tweet to @100_HPM with your search query and the following, single-use hashtag: ";
+    column = regular.drawMultiLineColumn(foo, 40,
+                                         x, column.y+column.height+60,
+                                         ssWidth-ssWidth*0.10,
+                                         numLines, false, 5, true, &wordsWereCropped);
     
+    ofSetColor(229, 24, 139);
+    numLines = 0;
+    wordsWereCropped = false;
+    foo = nextHashTag;
+    column = bold.drawMultiLineColumn(foo, 40,
+                                         x+40, column.y+column.height+60,
+                                         ssWidth-ssWidth*0.10,
+                                         numLines, false, 5, true, &wordsWereCropped);
+    ofSetColor(255, 255, 255);
+    
+    numLines = 0;
+    wordsWereCropped = false;
+    foo = "For example, if you wanted to search for \"Bob Ross\" you would tweet: \n\"@100_HPM Bob Ross "+nextHashTag +"\"";
+    column = regular.drawMultiLineColumn(foo, 40,
+                                      x, column.y+column.height+60,
+                                      ssWidth-ssWidth*0.10,
+                                      numLines, false, 5, true, &wordsWereCropped);
+    // HORIZONTAL LINE
+    ofLine(column.x, column.y+column.height+40/4, column.x+(ssWidth-column.x*2.0), column.y+column.height+40/4);
+    
+    
+    // PLAYING
+    numLines = 0;
+    wordsWereCropped = false;
+    foo = "PLAY QUEUE";
+    column = bold.drawMultiLineColumn(foo, 40,
+                                      x, column.y+column.height+90,
+                                      ssWidth-ssWidth*0.10,
+                                      numLines, false, 5, true, &wordsWereCropped);
+    
+    numLines = 0;
+    wordsWereCropped = false;
+    foo = "NOW PLAYING: " +currentSearch.query+" by @"+currentSearch.user+" at "+currentSearch.time;
+    column = regular.drawMultiLineColumn(foo, 30,
+                                         x, column.y+column.height+50,
+                                         ssWidth-ssWidth*0.10,
+                                         numLines, false, 5, true, &wordsWereCropped);
+    
+    // PROGRESS BAR
     ofEnableBlendMode(OF_BLENDMODE_ADD);
-    
+
     ofSetColor(100, 100, 100, 100);
-    ofRect(column.x, column.y+column.height+25, ssWidth-(column.x*2.0), 25);
+    ofRect(column.x, column.y+column.height+25, ssWidth-(column.x*2.0), 10);
     
     ofSetColor(255, 255, 255, 100);
-    ofRect(column.x, column.y+column.height+25, ofMap(currentTime, 0, currentSearch.captureDuration, 0, ssWidth-(column.x*2.0), true), 25);
+    ofRect(column.x, column.y+column.height+25, ofMap(currentTime, 0, currentSearch.captureDuration, 0, ssWidth-(column.x*2.0), true), 10);
     
+    
+    // QUEUED SEARCHES
     column = ofRectangle(x, column.y+column.height+15, 10, 50);
     
     ofEnableBlendMode(OF_BLENDMODE_ALPHA);
     ofSetColor(255, 255, 255);
     numLines = 0;
     wordsWereCropped = false;
-    foo = "Queued: ";
-    column = bold.drawMultiLineColumn(foo, 40, x, column.y+column.height+50, ssWidth-ssWidth*0.10, numLines, false, 5, true, &wordsWereCropped);
+//    foo = "QUEUED SEARCHES: ";
+//    column = bold.drawMultiLineColumn(foo, 40,
+//                                      x, column.y+column.height+50,
+//                                      ssWidth-ssWidth*0.10,
+//                                      numLines, false, 5, true, &wordsWereCropped);
     
     for(int i = 0; i < searchQueue.size(); i++){
         ofSetColor(255, 255, 255, ofMap(youTubeMap[searchQueue[i]].downloaded.size(), 0, youTubeMap[searchQueue[i]].files.size(), 100, 255, true));
-        foo = youTubeMap[searchQueue[i]].query+" by @"+youTubeMap[searchQueue[i]].user+" "+ofToString(ofMap(youTubeMap[searchQueue[i]].downloaded.size(), 0, youTubeMap[searchQueue[i]].files.size(), 0, 100, true))+"%";
-        column = regular.drawMultiLineColumn(foo, 40, x, column.y+column.height+50, ssWidth-ssWidth*0.10, numLines, false, 5, true, &wordsWereCropped);
+        foo = "QUEUED: " +youTubeMap[searchQueue[i]].query+" by @"+youTubeMap[searchQueue[i]].user+" -- "+ofToString(ofMap(youTubeMap[searchQueue[i]].downloaded.size(), 0, youTubeMap[searchQueue[i]].files.size(), 0, 100, true))+"% Downloaded";
+        column = regular.drawMultiLineColumn(foo, 30,
+                                             x, column.y+column.height+50,
+                                             ssWidth-ssWidth*0.10,
+                                             numLines, false, 5, true, &wordsWereCropped);
     }
     ofPopMatrix();
     ofDisableAlphaBlending();
