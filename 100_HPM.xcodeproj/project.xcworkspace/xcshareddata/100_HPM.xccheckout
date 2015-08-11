@@ -26,27 +26,31 @@
 		<string>https://github.com/armadillu/ofxFontStash.git</string>
 		<key>9ECB489377AD363C7FE4861A8F20F886A3068FCD</key>
 		<string>github.com:jamiezigelbaum/100_HPM.git</string>
+		<key>EBC5E2A29F125165AEBCAA19E4D8FC06D99494BA</key>
+		<string>https://github.com/obviousjim/ofxAVFVideoPlayer.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>100_HPM.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>0A0B1DDAA4B1769C7062F3EFC5ADBCA8E0E08FFD</key>
-		<string>../../../../../addons/ofxFLRecorder</string>
+		<string>../../../addons/ofxFLRecorder</string>
 		<key>2559BBC2C6F846687D7E9F4E42C98FC44D06AE4C</key>
-		<string>../../../../../addons/ofxUnicode</string>
+		<string>../../../addons/ofxUnicode</string>
 		<key>5DB7C332A3A89035E93556A2A38BF414005BA671</key>
-		<string>../../../../../addons/ofxJSON</string>
+		<string>../../../addons/ofxJSON</string>
 		<key>69C337C926C4061951467A7112DC044888F744F6</key>
-		<string>../../../../../addons/ofxNodejs</string>
+		<string>../../../addons/ofxNodejs</string>
 		<key>7E804D925461714118DB355C65BC964B41D94376</key>
-		<string>../../../../../addons/ofxUI</string>
+		<string>../../../addons/ofxUI</string>
 		<key>97FDCF03A971289FFED99A88138A5909EA5F5D0C</key>
-		<string>../../../../../addons/ofxISF</string>
+		<string>../../../addons/ofxISF</string>
 		<key>9B774B0323186B2BCB6A3C5ECEB04025E7DCF467</key>
-		<string>../../../../../addons/ofxFontStash</string>
+		<string>../../../addons/ofxFontStash</string>
 		<key>9ECB489377AD363C7FE4861A8F20F886A3068FCD</key>
 		<string>../..</string>
+		<key>EBC5E2A29F125165AEBCAA19E4D8FC06D99494BA</key>
+		<string>../../../../../addons/ofxAVFVideoPlayer</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>github.com:jamiezigelbaum/100_HPM.git</string>
@@ -63,6 +67,14 @@
 			<string>9ECB489377AD363C7FE4861A8F20F886A3068FCD</string>
 			<key>IDESourceControlWCCName</key>
 			<string>100_HPM</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>EBC5E2A29F125165AEBCAA19E4D8FC06D99494BA</string>
+			<key>IDESourceControlWCCName</key>
+			<string>ofxAVFVideoPlayer</string>
 		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>

@@ -40,12 +40,12 @@
 <Widget>
     <Kind>42</Kind>
     <Name>SS Width</Name>
-    <Value>776</Value>
+    <Value>786</Value>
 </Widget>
 <Widget>
     <Kind>42</Kind>
     <Name>SS Height</Name>
-    <Value>1021</Value>
+    <Value>968</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
@@ -70,5 +70,5 @@
 <Widget>
     <Kind>2</Kind>
     <Name>Debug On Start</Name>
-    <Value>0</Value>
+    <Value>1</Value>
 </Widget>

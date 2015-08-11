@@ -146,7 +146,7 @@ void ofApp::setup()
     
     //    if(dir.size() >= maxVids){
     for(int i = 0; i < maxVids*2; i++){
-        players.push_back(new ofVideoPlayer());
+        players.push_back(new ofxAVFVideoPlayer());
         if(i<dir.size()){
             players[i]->loadMovie(dir.getPath(i));
             players[i]->setLoopState(OF_LOOP_NORMAL);
@@ -154,7 +154,7 @@ void ofApp::setup()
             players[i]->setVolume(0);
             players[i]->setSpeed(1.0);
             currentSearch.files.push_back(dir.getPath(i));
-            players[i]->setUseTexture(true);
+//            players[i]->setUseTexture(true);
         }
         
         

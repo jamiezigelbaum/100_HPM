@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		BBAB23CB13894F3D00AA2426 /* GLUT.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BBAB23BE13894E4700AA2426 /* GLUT.framework */; };
+		C84152101B7A9513005C02A2 /* ofxAVFVideoPlayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = C841520D1B7A9513005C02A2 /* ofxAVFVideoPlayer.mm */; };
+		C84152111B7A9513005C02A2 /* ofxAVFVideoRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = C841520F1B7A9513005C02A2 /* ofxAVFVideoRenderer.m */; };
+		C84152131B7A957D005C02A2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C84152121B7A957D005C02A2 /* QuartzCore.framework */; };
+		C84152151B7A958A005C02A2 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C84152141B7A958A005C02A2 /* CoreMedia.framework */; };
+		C84152171B7A9598005C02A2 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C84152161B7A9598005C02A2 /* AVFoundation.framework */; };
 		C84EA53D1B786D93000311B4 /* jsonxx.cc in Sources */ = {isa = PBXBuildFile; fileRef = C84EA53A1B786D93000311B4 /* jsonxx.cc */; };
 		C84EA54B1B786D9F000311B4 /* ofxJSONElement.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C84EA5411B786D9F000311B4 /* ofxJSONElement.cpp */; };
 		C84EA54C1B786D9F000311B4 /* jsoncpp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C84EA54A1B786D9F000311B4 /* jsoncpp.cpp */; };
@@ -137,6 +142,13 @@
 
 /* Begin PBXFileReference section */
 		BBAB23BE13894E4700AA2426 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = ../../../libs/glut/lib/osx/GLUT.framework; sourceTree = "<group>"; };
+		C841520C1B7A9513005C02A2 /* ofxAVFVideoPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ofxAVFVideoPlayer.h; sourceTree = "<group>"; };
+		C841520D1B7A9513005C02A2 /* ofxAVFVideoPlayer.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ofxAVFVideoPlayer.mm; sourceTree = "<group>"; };
+		C841520E1B7A9513005C02A2 /* ofxAVFVideoRenderer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ofxAVFVideoRenderer.h; sourceTree = "<group>"; };
+		C841520F1B7A9513005C02A2 /* ofxAVFVideoRenderer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ofxAVFVideoRenderer.m; sourceTree = "<group>"; };
+		C84152121B7A957D005C02A2 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		C84152141B7A958A005C02A2 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		C84152161B7A9598005C02A2 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		C84EA5321B786D93000311B4 /* Chain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Chain.h; sourceTree = "<group>"; };
 		C84EA5331B786D93000311B4 /* CodeGenerater.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CodeGenerater.h; sourceTree = "<group>"; };
 		C84EA5341B786D93000311B4 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
@@ -458,6 +470,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C84152171B7A9598005C02A2 /* AVFoundation.framework in Frameworks */,
+				C84152151B7A958A005C02A2 /* CoreMedia.framework in Frameworks */,
+				C84152131B7A957D005C02A2 /* QuartzCore.framework in Frameworks */,
 				E7F985F815E0DEA3003869B5 /* Accelerate.framework in Frameworks */,
 				E7E077E815D3B6510020DFD4 /* QTKit.framework in Frameworks */,
 				E4EB6799138ADC1D00A09F29 /* GLUT.framework in Frameworks */,
@@ -494,6 +509,7 @@
 				C84EA6791B786E1E000311B4 /* ofxUnicode */,
 				C84EA6971B786E3B000311B4 /* ofxOsc */,
 				C84EA6CF1B786EB1000311B4 /* ofxFLRecorder */,
+				C841520A1B7A9513005C02A2 /* ofxAVFVideoPlayer */,
 			);
 			name = addons;
 			sourceTree = "<group>";
@@ -525,6 +541,26 @@
 				BBAB23BE13894E4700AA2426 /* GLUT.framework */,
 			);
 			name = "3rd party frameworks";
+			sourceTree = "<group>";
+		};
+		C841520A1B7A9513005C02A2 /* ofxAVFVideoPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				C841520B1B7A9513005C02A2 /* src */,
+			);
+			name = ofxAVFVideoPlayer;
+			sourceTree = "<group>";
+		};
+		C841520B1B7A9513005C02A2 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				C841520C1B7A9513005C02A2 /* ofxAVFVideoPlayer.h */,
+				C841520D1B7A9513005C02A2 /* ofxAVFVideoPlayer.mm */,
+				C841520E1B7A9513005C02A2 /* ofxAVFVideoRenderer.h */,
+				C841520F1B7A9513005C02A2 /* ofxAVFVideoRenderer.m */,
+			);
+			name = src;
+			path = ../../../addons/ofxAVFVideoPlayer/src;
 			sourceTree = "<group>";
 		};
 		C84EA52F1B786D93000311B4 /* ofxISF */ = {
@@ -1302,6 +1338,9 @@
 		E4B69B4A0A3A1720003C02F2 = {
 			isa = PBXGroup;
 			children = (
+				C84152161B7A9598005C02A2 /* AVFoundation.framework */,
+				C84152141B7A958A005C02A2 /* CoreMedia.framework */,
+				C84152121B7A957D005C02A2 /* QuartzCore.framework */,
 				E4B6FCAD0C3E899E008CF71C /* openFrameworks-Info.plist */,
 				E4EB6923138AFD0F00A09F29 /* Project.xcconfig */,
 				E4B69E1C0A3A1BDC003C02F2 /* src */,
@@ -1459,6 +1498,7 @@
 				C84EA66A1B786DB2000311B4 /* ofxNodejsUtils.cpp in Sources */,
 				C84EA54C1B786D9F000311B4 /* jsoncpp.cpp in Sources */,
 				C84EA5B11B786DA6000311B4 /* ofxUIBaseDraws.cpp in Sources */,
+				C84152101B7A9513005C02A2 /* ofxAVFVideoPlayer.mm in Sources */,
 				C84EA5DA1B786DA6000311B4 /* ofxUIWidget.cpp in Sources */,
 				C84EA5BE1B786DA6000311B4 /* ofxUIImageSlider.cpp in Sources */,
 				C84EA5D01B786DA6000311B4 /* ofxUISpacer.cpp in Sources */,
@@ -1483,6 +1523,7 @@
 				C84EA6671B786DB2000311B4 /* ofxNodejs.cpp in Sources */,
 				C84EA6C71B786E3B000311B4 /* IpEndpointName.cpp in Sources */,
 				C84EA6961B786E1E000311B4 /* ofUTF8.cpp in Sources */,
+				C84152111B7A9513005C02A2 /* ofxAVFVideoRenderer.m in Sources */,
 				C84EA5CB1B786DA6000311B4 /* ofxUIRectangle.cpp in Sources */,
 				C84EA6C41B786E3B000311B4 /* ofxOscParameterSync.cpp in Sources */,
 				C84EA5BA1B786DA6000311B4 /* ofxUIFPSSlider.cpp in Sources */,
@@ -1655,7 +1696,7 @@
 					../../../addons/ofxFLRecorder/libs/bngnsrecorder/lib/osx,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)Debug";
-				USER_HEADER_SEARCH_PATHS = "../../../addons/ofxJSON/libs/jsoncpp/include/ ../../../addons/ofxUnicode/libs/utf8cpp/include/ ../../../addons/ofxNodejs/libs/node/include/ ../../../addons/ofxFLRecorder/libs/bngnsrecorder/include/ ../../../addons/ofxOsc/libs/**";
+				USER_HEADER_SEARCH_PATHS = "../../../addons/ofxJSON/libs/jsoncpp/include/ ../../../addons/ofxOsc/libs/** ../../../addons/ofxUnicode/libs/utf8cpp/include/ ../../../addons/ofxNodejs/libs/node/include/ ../../../addons/ofxFLRecorder/libs/bngnsrecorder/include/";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1743,7 +1784,7 @@
 					../../../addons/ofxFLRecorder/libs/bngnsrecorder/lib/osx,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "../../../addons/ofxJSON/libs/jsoncpp/include/ ../../../addons/ofxUnicode/libs/utf8cpp/include/ ../../../addons/ofxNodejs/libs/node/include/ ../../../addons/ofxFLRecorder/libs/bngnsrecorder/include/ ../../../addons/ofxOsc/libs/**";
+				USER_HEADER_SEARCH_PATHS = "../../../addons/ofxJSON/libs/jsoncpp/include/ ../../../addons/ofxOsc/libs/** ../../../addons/ofxUnicode/libs/utf8cpp/include/ ../../../addons/ofxNodejs/libs/node/include/ ../../../addons/ofxFLRecorder/libs/bngnsrecorder/include/";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
