@@ -8,6 +8,7 @@
 #include "ofxJSON.h"
 #include "ofxFontStash.h"
 #include "ofxFLrecorder.h"
+#include "ofxAVFVideoPlayer.h"
 
 
 class ofApp : public ofBaseApp{
@@ -27,7 +28,7 @@ public:
     ofxISF::Shader isf3;
     ofxISF::Shader isf4;
     ofxISF::Shader colorCorrect;
-    vector<ofVideoPlayer*> 	players;
+    vector<ofxAVFVideoPlayer*> 	players;
     vector<ofFbo*> 	normalized;
     vector<string> filePaths;
     ofVideoGrabber video;
