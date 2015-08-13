@@ -50,10 +50,10 @@
 		<key>9ECB489377AD363C7FE4861A8F20F886A3068FCD</key>
 		<string>../..</string>
 		<key>EBC5E2A29F125165AEBCAA19E4D8FC06D99494BA</key>
-		<string>../../../../../addons/ofxAVFVideoPlayer</string>
+		<string>../../../addons/ofxAVFVideoPlayer</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/jamiezigelbaum/100_HPM.git</string>
+	<string>github.com:jamiezigelbaum/100_HPM.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>

@@ -546,6 +546,10 @@ void ofApp::keyPressed(int key)
         }
         
     }
+    
+    if(key == 'f'){
+        ofToggleFullscreen();
+    }
 }
 void ofApp::generateShaders(int numVids){
     for(int j = 0; j < 2; j++){

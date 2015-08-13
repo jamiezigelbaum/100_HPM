@@ -48,7 +48,11 @@ twitter.start = function(data)
     search.start();
     
     if(data == true){
-        search.testadd({'user_screen_name':'thedantheman','tweet_text':'@thedantheman "100 Hours Per Minute"'});
+        search.testadd({'user_screen_name':'thedantheman','tweet_text':'@thedantheman digital art'});
+        search.testadd({'user_screen_name':'thedantheman','tweet_text':'@thedantheman video art'});
+        search.testadd({'user_screen_name':'thedantheman','tweet_text':'@thedantheman light art'});
+        search.testadd({'user_screen_name':'thedantheman','tweet_text':'@thedantheman performance art'});
+        search.testadd({'user_screen_name':'thedantheman','tweet_text':'@thedantheman fine art'});
     }
 };
 
