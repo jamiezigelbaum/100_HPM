@@ -19,7 +19,7 @@ void ofApp::setup()
       "var upload       = require('../../../data/node/libs/api/upload');"
       
       "twitter.start(true);"
-      "upload.start(false);"
+      "upload.start();"
       );
     
     
@@ -36,6 +36,7 @@ void ofApp::setup()
     texWidth = 640;
     texHeight = 480;
     maxVids = 9;
+    debug = true;
     scaleTex = 1.0;
     display = "Tweet to @100_HPM with your search query";
     search = "using this hashtag ";
@@ -61,11 +62,7 @@ void ofApp::setup()
     gui->update();
     
     gui->setVisible(debug);
-    if(debug){
-        ofShowCursor();
-    }else{
-        ofHideCursor();
-    }
+
     
     
     
@@ -198,13 +195,17 @@ void ofApp::setup()
     currentSearch.bReady = true;
     youTubeMap[currentSearch.query] = currentSearch;
     nextHashTag = "#osc/newHash";
-    currentSearch.startTime = ofGetSystemTime();
+    currentSearch.startTime = ofGetElapsedTimef();
     recording = false;
     fade = 0;
+    
+    
+
 }
 
 void ofApp::update()
 {
+
     
     float t = ofGetElapsedTimef();
     
@@ -251,7 +252,7 @@ void ofApp::update()
     
     colorCorrect.update();
     
-    float currentTime = (ofGetSystemTime()-currentSearch.startTime)/1000.0;
+    float currentTime = (ofGetElapsedTimef()-currentSearch.startTime);
     
     if(recording){
         if(!recorder.Stopped() && !recorder.Stopping()){
@@ -310,7 +311,7 @@ void ofApp::update()
                 loopset.push_back(foo);
                 searchQueue.pop_front();
                 fade = 0;
-                currentSearch.startTime = ofGetSystemTime();
+                currentSearch.startTime = ofGetElapsedTimef();
                 generateShaders(foomax);
                 
                 recorder = ofxFLRecorder(ofToDataPath("renders/"+currentSearch.renderPath), texWidth, texHeight, 30, ofxFLRecorder::Normal);
@@ -347,7 +348,7 @@ void ofApp::update()
                     }
                     activePlayers = currentSearch.files.size()>players.size()?players.size():currentSearch.files.size();
                     fade = 0;
-                    currentSearch.startTime = ofGetSystemTime();
+                    currentSearch.startTime = ofGetElapsedTimef();
                     generateShaders(foomax);
                     
                     loopIndex++;
@@ -378,11 +379,17 @@ void ofApp::update()
     }else if(fade > 255){
         fade = 255;
     }
+    
+    if(debug){
+        ofShowCursor();
+    }else{
+        ofHideCursor();
+    }
 }
 
 void ofApp::draw()
 {
-    float currentTime = (ofGetSystemTime()-currentSearch.startTime)/1000.0;
+    float currentTime = (ofGetElapsedTimef()-currentSearch.startTime);
     
     ofEnableAlphaBlending();
     ofEnableBlendMode(OF_BLENDMODE_ALPHA);
@@ -428,20 +435,20 @@ void ofApp::draw()
                                          numLines, false, 5, true, &wordsWereCropped);
     
     // HORIZONTAL LINE
-    ofLine(column.x, column.y+column.height+85/4, column.x+(ssWidth-column.x*2.0), column.y+column.height+85/4);
+//    ofLine(column.x, column.y+column.height+85/4, column.x+(ssWidth-column.x*2.0), column.y+column.height+85/4);
     
     // INSTRUCTIONS
     numLines = 0;
     wordsWereCropped = false;
     foo = "INSTRUCTIONS";
     column = bold.drawMultiLineColumn(foo, 40,
-                                      x, column.y+column.height+60,
+                                      x, column.y+column.height+120,
                                       ssWidth-ssWidth*0.10,
                                       numLines, false, 5, true, &wordsWereCropped);
     
     numLines = 0;
     wordsWereCropped = false;
-    foo = "Use Twitter on your phone and send a tweet to @100_HPM with your search query and the following, single-use hashtag: ";
+    foo = "Use Twitter on your phone and send a tweet to @100_HPM with your YouTube search query and the following, single-use hashtag: ";
     column = regular.drawMultiLineColumn(foo, 40,
                                          x, column.y+column.height+60,
                                          ssWidth-ssWidth*0.10,
@@ -459,27 +466,38 @@ void ofApp::draw()
     
     numLines = 0;
     wordsWereCropped = false;
-    foo = "For example, if you wanted to search for \"Bob Ross\" you would tweet: \n\"@100_HPM Bob Ross "+nextHashTag +"\"";
+    foo = "For example, if you wanted to see videos of Bob Ross you would tweet:";
     column = regular.drawMultiLineColumn(foo, 40,
                                       x, column.y+column.height+60,
                                       ssWidth-ssWidth*0.10,
                                       numLines, false, 5, true, &wordsWereCropped);
+    
+    ofSetColor(229, 24, 139);
+    numLines = 0;
+    wordsWereCropped = false;
+    foo = "@100_HPM Bob Ross "+nextHashTag;
+    column = bold.drawMultiLineColumn(foo, 40,
+                                      x+40, column.y+column.height+60,
+                                      ssWidth-ssWidth*0.10,
+                                      numLines, false, 5, true, &wordsWereCropped);
+    ofSetColor(255, 255, 255);
+    
     // HORIZONTAL LINE
-    ofLine(column.x, column.y+column.height+40/4, column.x+(ssWidth-column.x*2.0), column.y+column.height+40/4);
+//    ofLine(column.x, column.y+column.height+40/4, column.x+(ssWidth-column.x*2.0), column.y+column.height+40/4);
     
     
     // PLAYING
     numLines = 0;
     wordsWereCropped = false;
-    foo = "PLAY QUEUE";
+    foo = "NOW PLAYING";
     column = bold.drawMultiLineColumn(foo, 40,
-                                      x, column.y+column.height+90,
+                                      x, column.y+column.height+120,
                                       ssWidth-ssWidth*0.10,
                                       numLines, false, 5, true, &wordsWereCropped);
     
     numLines = 0;
     wordsWereCropped = false;
-    foo = "NOW PLAYING: " +currentSearch.query+" by @"+currentSearch.user+" at "+currentSearch.time;
+    foo = currentSearch.query+" by @"+currentSearch.user+" at "+currentSearch.time;
     column = regular.drawMultiLineColumn(foo, 30,
                                          x, column.y+column.height+50,
                                          ssWidth-ssWidth*0.10,
@@ -502,15 +520,15 @@ void ofApp::draw()
     ofSetColor(255, 255, 255);
     numLines = 0;
     wordsWereCropped = false;
-//    foo = "QUEUED SEARCHES: ";
-//    column = bold.drawMultiLineColumn(foo, 40,
-//                                      x, column.y+column.height+50,
-//                                      ssWidth-ssWidth*0.10,
-//                                      numLines, false, 5, true, &wordsWereCropped);
+    foo = "PLAY QUEUE:";
+    column = bold.drawMultiLineColumn(foo, 40,
+                                      x, column.y+column.height+40,
+                                      ssWidth-ssWidth*0.10,
+                                      numLines, false, 5, true, &wordsWereCropped);
     
     for(int i = 0; i < searchQueue.size(); i++){
         ofSetColor(255, 255, 255, ofMap(youTubeMap[searchQueue[i]].downloaded.size(), 0, youTubeMap[searchQueue[i]].files.size(), 100, 255, true));
-        foo = "QUEUED: " +youTubeMap[searchQueue[i]].query+" by @"+youTubeMap[searchQueue[i]].user+" -- "+ofToString(ofMap(youTubeMap[searchQueue[i]].downloaded.size(), 0, youTubeMap[searchQueue[i]].files.size(), 0, 100, true))+"% Downloaded";
+        foo = youTubeMap[searchQueue[i]].query+" by @"+youTubeMap[searchQueue[i]].user+" at "+currentSearch.time+" -- "+ofToString(ofMap(youTubeMap[searchQueue[i]].downloaded.size(), 0, youTubeMap[searchQueue[i]].files.size(), 0, 100, true))+"% Downloaded";
         column = regular.drawMultiLineColumn(foo, 30,
                                              x, column.y+column.height+50,
                                              ssWidth-ssWidth*0.10,
@@ -519,13 +537,18 @@ void ofApp::draw()
     ofPopMatrix();
     ofDisableAlphaBlending();
     
-    
+    ofDrawBitmapString("debg: "+ofToString(debug), ofGetWidth()-300, 100);
+
     
     if(debug){
-        ofDrawBitmapString(ofToString(ofGetFrameRate()), ofGetWidth()-300, 50);
-        ofDrawBitmapString(ofToString(currentTime)+" start fade "+ofToString(currentSearch.captureDuration-255/60), ofGetWidth()-300, 100);
-        ofDrawBitmapString(" duration: "+ofToString(currentSearch.captureDuration), ofGetWidth()-300, 150);
-        ofDrawBitmapString("fade: "+ofToString(fade)+" record: "+ofToString(recording), ofGetWidth()-300, 200);
+        ofDrawBitmapString("fps: "+ofToString(ofGetFrameRate()), ofGetWidth()-300, 50);
+        ofDrawBitmapString("ofGetElapsedTimef: "+ofToString(ofGetElapsedTimef()), ofGetWidth()-300, 125);
+        ofDrawBitmapString("start time: "+ofToString(currentSearch.startTime), ofGetWidth()-300, 150);
+        ofDrawBitmapString("currentTime: "+ofToString(currentTime), ofGetWidth()-300, 200);
+        ofDrawBitmapString("start fade "+ofToString(currentSearch.captureDuration-255/60), ofGetWidth()-300, 250);
+        ofDrawBitmapString("duration: "+ofToString(currentSearch.captureDuration), ofGetWidth()-300, 300);
+        ofDrawBitmapString("fade: "+ofToString(fade)+" record: "+ofToString(recording), ofGetWidth()-300, 350);
+
         ofShowCursor();
     }
     
@@ -539,11 +562,11 @@ void ofApp::keyPressed(int key)
     if(key == 'd'){
         debug = !debug;
         gui->setVisible(debug);
-        if(debug){
-            ofShowCursor();
-        }else{
-            ofHideCursor();
-        }
+//        if(debug){
+//            ofShowCursor();
+//        }else{
+//            ofHideCursor();
+//        }
         
     }
     
