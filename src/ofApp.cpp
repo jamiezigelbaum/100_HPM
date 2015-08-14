@@ -33,10 +33,11 @@ void ofApp::setup()
     receiver.setup(7778);
     regular.setup(ofToDataPath("font/AvenirNext-Medium.ttf"));
     bold.setup(ofToDataPath("font/AvenirNext-Bold.ttf"));
+    font.setup(ofToDataPath("font/Vera.ttf"));
     texWidth = 640;
     texHeight = 480;
     maxVids = 9;
-    debug = true;
+//    debug = true;
     scaleTex = 1.0;
     display = "Tweet to @100_HPM with your search query";
     search = "using this hashtag ";
@@ -205,10 +206,13 @@ void ofApp::setup()
 
 void ofApp::update()
 {
-
-    
     float t = ofGetElapsedTimef();
     
+    if(!debug){
+        ofHideCursor();
+    }else{
+        ofShowCursor();
+    }
     
     oscWorkHorse();
     
@@ -350,6 +354,7 @@ void ofApp::update()
                     fade = 0;
                     currentSearch.startTime = ofGetElapsedTimef();
                     generateShaders(foomax);
+                    ofHideCursor();
                     
                     loopIndex++;
                     if(loopIndex >= loopset.size()){
@@ -379,16 +384,12 @@ void ofApp::update()
     }else if(fade > 255){
         fade = 255;
     }
-    
-    if(debug){
-        ofShowCursor();
-    }else{
-        ofHideCursor();
-    }
+
 }
 
 void ofApp::draw()
 {
+
     float currentTime = (ofGetElapsedTimef()-currentSearch.startTime);
     
     ofEnableAlphaBlending();
@@ -534,11 +535,15 @@ void ofApp::draw()
                                              ssWidth-ssWidth*0.10,
                                              numLines, false, 5, true, &wordsWereCropped);
     }
+    
+    // big ole' debug
+//    ofSetColor(255,0,0);
+//    font.draw(ofToString(int(ofGetFrameRate())), 600, ofGetWidth()-1500, 500);
+    
     ofPopMatrix();
     ofDisableAlphaBlending();
-    
-    ofDrawBitmapString("debg: "+ofToString(debug), ofGetWidth()-300, 100);
 
+    ofSetColor(255);
     
     if(debug){
         ofDrawBitmapString("fps: "+ofToString(ofGetFrameRate()), ofGetWidth()-300, 50);
@@ -549,7 +554,7 @@ void ofApp::draw()
         ofDrawBitmapString("duration: "+ofToString(currentSearch.captureDuration), ofGetWidth()-300, 300);
         ofDrawBitmapString("fade: "+ofToString(fade)+" record: "+ofToString(recording), ofGetWidth()-300, 350);
 
-        ofShowCursor();
+//        ofShowCursor();
     }
     
 }
@@ -562,11 +567,11 @@ void ofApp::keyPressed(int key)
     if(key == 'd'){
         debug = !debug;
         gui->setVisible(debug);
-//        if(debug){
-//            ofShowCursor();
-//        }else{
-//            ofHideCursor();
-//        }
+        if(debug){
+            ofShowCursor();
+        }else{
+            ofHideCursor();
+        }
         
     }
     

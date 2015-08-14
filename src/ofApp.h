@@ -57,6 +57,7 @@ public:
     bool recording;
     ofxFontStash regular;
     ofxFontStash bold;
+    ofxFontStash font;
     ofxFLRecorder recorder;
     bool debug;
     ofxUIVec3f center;
