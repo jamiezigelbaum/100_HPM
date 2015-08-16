@@ -208,10 +208,13 @@ void ofApp::update()
 {
     float t = ofGetElapsedTimef();
     
-    if(!debug){
-        ofHideCursor();
+    if(debug){
+//        ofShowCursor();
+        CGDisplayShowCursor(NULL);
+
     }else{
-        ofShowCursor();
+//        ofHideCursor();
+        CGDisplayHideCursor(NULL);
     }
     
     oscWorkHorse();
@@ -354,7 +357,7 @@ void ofApp::update()
                     fade = 0;
                     currentSearch.startTime = ofGetElapsedTimef();
                     generateShaders(foomax);
-                    ofHideCursor();
+
                     
                     loopIndex++;
                     if(loopIndex >= loopset.size()){
@@ -553,8 +556,6 @@ void ofApp::draw()
         ofDrawBitmapString("start fade "+ofToString(currentSearch.captureDuration-255/60), ofGetWidth()-300, 250);
         ofDrawBitmapString("duration: "+ofToString(currentSearch.captureDuration), ofGetWidth()-300, 300);
         ofDrawBitmapString("fade: "+ofToString(fade)+" record: "+ofToString(recording), ofGetWidth()-300, 350);
-
-//        ofShowCursor();
     }
     
 }
@@ -568,9 +569,12 @@ void ofApp::keyPressed(int key)
         debug = !debug;
         gui->setVisible(debug);
         if(debug){
-            ofShowCursor();
+//            ofShowCursor();
+            CGDisplayShowCursor(NULL);
+
         }else{
-            ofHideCursor();
+//            ofHideCursor();
+            CGDisplayHideCursor(NULL);
         }
         
     }
