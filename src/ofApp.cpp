@@ -18,7 +18,7 @@ void ofApp::setup()
       "var twitter       = require('../../../data/node/libs/api/twitter');"
       "var upload       = require('../../../data/node/libs/api/upload');"
       
-      "twitter.start(true);"
+      "twitter.start();"
       "upload.start();"
       );
     
@@ -200,7 +200,7 @@ void ofApp::setup()
     recording = false;
     fade = 0;
     
-    
+    CGDisplayHideCursor(NULL);
 
 }
 
@@ -208,14 +208,14 @@ void ofApp::update()
 {
     float t = ofGetElapsedTimef();
     
-    if(debug){
-        ofShowCursor();
-        CGDisplayShowCursor(NULL);
-
-    }else{
-        ofHideCursor();
-        CGDisplayHideCursor(NULL);
-    }
+//    if(debug){
+//        ofShowCursor();
+//        CGDisplayShowCursor(NULL);
+//
+//    }else{
+//        ofHideCursor();
+//        CGDisplayHideCursor(NULL);
+//    }
     
     oscWorkHorse();
     
@@ -532,7 +532,7 @@ void ofApp::draw()
     
     for(int i = 0; i < searchQueue.size(); i++){
         ofSetColor(255, 255, 255, ofMap(youTubeMap[searchQueue[i]].downloaded.size(), 0, youTubeMap[searchQueue[i]].files.size(), 100, 255, true));
-        foo = youTubeMap[searchQueue[i]].query+" by @"+youTubeMap[searchQueue[i]].user+" at "+currentSearch.time+" -- "+ofToString(ofMap(youTubeMap[searchQueue[i]].downloaded.size(), 0, youTubeMap[searchQueue[i]].files.size(), 0, 100, true))+"% Downloaded";
+        foo = youTubeMap[searchQueue[i]].query+" by @"+youTubeMap[searchQueue[i]].user+" at "+youTubeMap[searchQueue[i]].time+" -- "+ofToString(ofMap(youTubeMap[searchQueue[i]].downloaded.size(), 0, youTubeMap[searchQueue[i]].files.size(), 0, 100, true))+"% Downloaded";
         column = regular.drawMultiLineColumn(foo, 30,
                                              x, column.y+column.height+50,
                                              ssWidth-ssWidth*0.10,
@@ -569,11 +569,11 @@ void ofApp::keyPressed(int key)
         debug = !debug;
         gui->setVisible(debug);
         if(debug){
-            ofShowCursor();
+//            ofShowCursor();
             CGDisplayShowCursor(NULL);
 
         }else{
-            ofHideCursor();
+//            ofHideCursor();
             CGDisplayHideCursor(NULL);
         }
         

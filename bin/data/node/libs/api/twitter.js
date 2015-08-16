@@ -48,11 +48,11 @@ twitter.start = function(data)
     search.start();
     
     if(data == true){
-        search.testadd({'user_screen_name':'thedantheman','tweet_text':'@thedantheman digital art'});
-        search.testadd({'user_screen_name':'thedantheman','tweet_text':'@thedantheman video art'});
-        search.testadd({'user_screen_name':'thedantheman','tweet_text':'@thedantheman light art'});
-        search.testadd({'user_screen_name':'thedantheman','tweet_text':'@thedantheman performance art'});
-        search.testadd({'user_screen_name':'thedantheman','tweet_text':'@thedantheman fine art'});
+        search.testadd({'user_screen_name':'jamiezigelbaum','tweet_text':'@jamiezigelbaum digital art'});
+        search.testadd({'user_screen_name':'jamiezigelbaum','tweet_text':'@jamiezigelbaum video art'});
+        search.testadd({'user_screen_name':'jamiezigelbaum','tweet_text':'@jamiezigelbaum light art'});
+        search.testadd({'user_screen_name':'jamiezigelbaum','tweet_text':'@jamiezigelbaum performance art'});
+        search.testadd({'user_screen_name':'jamiezigelbaum','tweet_text':'@jamiezigelbaum fine art'});
     }
 };
 
