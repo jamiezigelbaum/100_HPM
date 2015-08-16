@@ -209,11 +209,11 @@ void ofApp::update()
     float t = ofGetElapsedTimef();
     
     if(debug){
-//        ofShowCursor();
+        ofShowCursor();
         CGDisplayShowCursor(NULL);
 
     }else{
-//        ofHideCursor();
+        ofHideCursor();
         CGDisplayHideCursor(NULL);
     }
     
@@ -569,11 +569,11 @@ void ofApp::keyPressed(int key)
         debug = !debug;
         gui->setVisible(debug);
         if(debug){
-//            ofShowCursor();
+            ofShowCursor();
             CGDisplayShowCursor(NULL);
 
         }else{
-//            ofHideCursor();
+            ofHideCursor();
             CGDisplayHideCursor(NULL);
         }
         
